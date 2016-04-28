@@ -1,6 +1,6 @@
 ![logo](/angularjs.png)  
 
-# angular-text-json-editor
+# [angular-text-json-editor](https://github.com/yalishizhude/angular-text-json-editor)
 ![gif](/show.gif)
 
 *Extends the "textarea" html tag and makes it intelligent to edit json's format string.*
