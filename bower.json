@@ -1,0 +1,21 @@
+{
+  "name": "angular-text-json-editor",
+  "main": "index.js",
+  "homepage": "https://github.com/yalishizhude/angular-text-json-editor",
+  "authors": [
+    "yalishizhude <yalishizhude@163.com>"
+  ],
+  "description": "An angular directive -- a textarea which can easily edit a json format string,including auto indent,auto closure symbol,multiple rows indent...etc",
+  "moduleType": [],
+  "keywords": [
+    "json"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
