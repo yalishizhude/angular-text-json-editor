@@ -8,10 +8,10 @@
 对textarea标签进行了扩展，编辑json字符串时更加智能。
 
 # 功能 (feature)
-*Double quote automatically close*
-*Add double quote for selected rows*
-*Multiple rows indent/anti indent*
-*Automatically indent when enter key pressed*
+*Double quote automatically close*<br>
+*Add double quote for selected rows*<br>
+*Multiple rows indent/anti indent*<br>
+*Automatically indent when enter key pressed*<br>
 
 * 双引号/括号自动闭合
 * 为选中行添加双引号
