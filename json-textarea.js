@@ -8,12 +8,14 @@
       link: function ($scope, element, attrs) {
         var textarea = element.find('textarea');
         var ul = element.find('ul');
-        $interval(function () {
-          ul[0].style.height = textarea[0].clientHeight + 'px';
-          ul[0].scrollTop = textarea[0].scrollTop;
-          var length = parseInt(Math.max(textarea[0].clientHeight, textarea[0].scrollHeight)/rowHeight, 10);
-          $scope.rowNum = new Array(length).join().split(',');
-        }, 16);
+        if('off'!==attrs.lineNum){
+          $interval(function () {
+            ul[0].style.height = textarea[0].clientHeight + 'px';
+            ul[0].scrollTop = textarea[0].scrollTop;
+            var length = parseInt(Math.max(textarea[0].clientHeight, textarea[0].scrollHeight)/rowHeight, 10);
+            $scope.rowNum = new Array(length).join().split(',');
+          }, 16);
+        }
         $scope.rows = attrs.rows || 20;
         textarea.on('keydown', function (e) {
           var indent = new Array(parseInt((attrs.indent||2),10)+1).join(' ');
