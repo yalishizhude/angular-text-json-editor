@@ -8,11 +8,13 @@
 对textarea标签进行了扩展，编辑json字符串时更加智能。
 
 # 功能 (feature)
+*Show line numbers*<br>
 *Double quote automatically close*<br>
 *Add double quote for selected rows*<br>
 *Multiple rows indent/anti indent*<br>
 *Automatically indent when enter key pressed*<br>
 
+* 显示行号
 * 双引号/括号自动闭合
 * 为选中行添加双引号
 * 多行缩进/反缩进
@@ -31,16 +33,31 @@
 
 ## 在html文件中引入模块   
 
+    <link rel="stylesheet" href="angular-text-json-editor/json-textarea.css">
+
     <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
-    <script src="./index.js"></script>
+    <script src="angular-text-json-editor/json-textarea.js"></script>
 
 *use the directive just like other directives*
 
 ## 同时在需要使用编辑器的地方引入`jsonEditor`指令  
 
-    //space numbers,default 2
-    //indet表示缩进空格数，默认为2  
-    <json-editor indent="4"></json-editor>
+    <json-editor></json-editor>
+
+
+## 设置参数(options)
+
+    /*
+      indent    space numbers,default 2
+      rows      textarea rows
+      line-num  default show line numbers unless it's "off"
+     */
+    /* 
+      indet   表示缩进空格数，默认为2  
+      rows    textarea行数
+      line-num  默认显示行数，当为"off"时关闭行数
+    */
+
 
 *load module 'ngTextEditor'*
 
