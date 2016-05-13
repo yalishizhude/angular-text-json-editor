@@ -1,0 +1,24 @@
+div.json-textarea ul{
+  margin: 0 -1px 0 0;
+  padding: 0;
+  display: inline-block;
+  background-color: #eee;
+  border: 1px solid #a9a9a9;
+  vertical-align: top;
+  overflow: hidden;
+}
+
+div.json-textarea li{
+  margin: 0;
+  padding: 0 3px;
+  display: block;
+  list-style: none;
+  font-size: 12px;
+  text-align: right;
+}
+
+div.json-textarea textarea{
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+}

@@ -1,14 +1,24 @@
 (function(angular){
   'use strict';
-  angular.module('ngTextEditor', []).directive('jsonEditor', [function(){
+  angular.module('ngTextEditor', []).directive('jsonEditor', ['$interval', function($interval){
+    var rowHeight = 14;
     return {
-      replace: true, 
-      template: '<textarea></textarea>',
+      replace: true,
+      template: '<div class="json-textarea"><ul><li ng-repeat="row in rowNum track by $index" ng-bind="$index+1"></li></ul><textarea rows={{rows}}></textarea></div>',
       link: function ($scope, element, attrs) {
-        element.on('keydown', function (e) {
+        var textarea = element.find('textarea');
+        var ul = element.find('ul');
+        $interval(function () {
+          ul[0].style.height = textarea[0].clientHeight + 'px';
+          ul[0].scrollTop = textarea[0].scrollTop;
+          var length = parseInt(Math.max(textarea[0].clientHeight, textarea[0].scrollHeight)/rowHeight, 10);
+          $scope.rowNum = new Array(length).join().split(',');
+        }, 16);
+        $scope.rows = attrs.rows || 20;
+        textarea.on('keydown', function (e) {
           var indent = new Array(parseInt((attrs.indent||2),10)+1).join(' ');
-          var node = element[0];
-          var value = element.val();
+          var node = textarea[0];
+          var value = textarea.val();
           var start = node.selectionStart;
           var end = node.selectionEnd;
           var selection = value.substring(start,end);
@@ -37,7 +47,7 @@
           } else if (9 === e.keyCode) { //tab
             e.preventDefault();
             e.stopPropagation();
-            if (e.shiftKey){ 
+            if (e.shiftKey){
               if(start === end) {  //单行反缩进
                 var rows = before.split('\n');
                 var srow = rows.pop().replace(indent, '');

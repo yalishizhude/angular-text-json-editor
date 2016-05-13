@@ -5,15 +5,15 @@
   <title>angular json editor</title>
   <style>
   textarea{
-    height: 300px;
     width: 500px;
   }
   </style>
+  <link rel="stylesheet" href="json-textarea.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body ng-controller="ctrl">
-  <json-editor indent="4"></json-editor>
+  <json-editor indent="4" rows="10"></json-editor>
   <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
-  <script src="./index.js"></script>
+  <script src="./json-textarea.js"></script>
   <script>
   /*global angular*/
   (function(){
@@ -23,4 +23,3 @@
   </script>
 </body>
 </html>
-
